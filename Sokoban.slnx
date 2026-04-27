@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Sokoban/Sokoban.vcxproj" />
+  <Project Path="Sokoban/Sokoban.vcxproj" Id="9b76a8f6-a393-4645-9ee8-277550fd05c1" />
 </Solution>

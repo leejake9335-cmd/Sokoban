@@ -1,85 +1,56 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <conio.h>
 #include <windows.h>
+
+#include "buffer.h"
 
 #define UP 72
 #define LEFT 75
 #define RIGHT 77
 #define DOWN 80
+#define HEIGHT 14
+#define WIDTH 16
 
-int index = 0;
+int map[WIDTH][HEIGHT] =
+{ // 0 : 벽 1: 빈공간 2 : 목표지점 3: 박스  4: 플레이어
+{0,0,0,0,0,1,0,0,0,0,1,1,1,1,1,1},
+{0,2,2,2,0,1,0,1,1,0,0,0,0,1,1,1},
+{0,2,2,2,0,0,0,1,1,3,1,1,0,1,1,1},
+{0,2,2,2,2,0,0,1,3,1,1,3,0,0,0,1},
+{0,0,2,2,2,2,0,0,1,1,1,3,1,1,0,1},
+{0,0,0,2,2,2,1,0,0,1,3,1,3,1,0,1},
+{0,1,0,0,1,1,1,3,0,1,1,3,1,1,0,1},
+{0,1,1,0,0,1,0,1,0,0,0,1,0,0,0,0},
+{0,1,3,1,0,1,0,1,1,1,1,1,1,1,1,0},
+{0,1,1,3,3,1,1,1,1,4,1,3,3,1,1,0},
+{0,1,1,1,0,1,1,3,3,1,1,1,3,0,0,0},
+{0,1,1,0,0,0,0,0,0,3,1,0,0,0,1,1},
+{0,1,0,0,1,1,1,1,0,0,0,0,1,1,1,1},
+{0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1},
+};
 
-HANDLE screen[2];
-
-int size = sizeof(screen) / sizeof(screen[0]);
-
-void initialize()
+void map_render()
 {
-	CONSOLE_CURSOR_INFO cursor;
-
-	cursor.bVisible = FALSE;
-
-
-
-	for (int i = 0; i < size; i++)
+	for (int x = 0; x < WIDTH; x++)
 	{
-		screen[i] = CreateConsoleScreenBuffer
-		(
-			GENERIC_READ | GENERIC_WRITE,
-			0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL
-		);
-
-		SetConsoleCursorInfo(screen[i], &cursor);
+		for (int y = 0; y < HEIGHT; y++)
+		{
+			switch (map[x][y])
+			{
+			case 0: render(x * 2, y, "■");
+				break;
+			case 1: render(x * 2, y, "　");
+				break;
+			case 2: render(x * 2, y, "○");
+				break;
+			case 3: render(x * 2, y, "●");
+				break;
+			}
+		}
 	}
 }
 
-void flip()
-{
-	SetConsoleActiveScreenBuffer(screen[index]);
-
-	index = !index;
-}
-
-void clear()
-{
-	COORD position = { 0, 0 };
-
-	DWORD dword;
-
-	CONSOLE_SCREEN_BUFFER_INFO buffer;
-
-	HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
-
-	GetConsoleScreenBufferInfo(console, &buffer);
-
-	int width = buffer.srWindow.Right - buffer.srWindow.Left + 1;
-
-	int height = buffer.srWindow.Bottom - buffer.srWindow.Top + 1;
-
-	FillConsoleOutputCharacter(screen[index], ' ', width * height, position, &dword);
-
-	// printf("%d", width); 120
-	// printf("%d", height); 30
-}
-
-void release()
-{
-	for (int i = 0; i < size; i++)
-	{
-		CloseHandle(screen[i]);
-	}
-}
-
-void render(int x, int y, const char* character)
-{
-	DWORD dword;
-	COORD position = { x, y };
-
-	SetConsoleCursorPosition(screen[index], position);
-	WriteFile(screen[index], character, strlen(character), &dword, NULL);
-
-
-}
 
 int main()
 {
@@ -95,17 +66,21 @@ int main()
 
 	initialize();
 
-	int x = 0;
+	int x = 18;
 
-	int y = 0;
+	int y = 9;
 
 	char key = 0;
+
+	
 
 	while (1)
 	{
 		flip();
 
 		clear();
+
+		map_render();
 
 		if (_kbhit())
 		{
@@ -126,13 +101,13 @@ int main()
 					  break;
 			case DOWN: if (height > y) { y++; }
 					 break;
-
-			default: render(0, 0, "exception");
-				break;
 			}
 		}
-		render(x, y, "○");
+		render(x, y, "★");
+
+	
 	}
+
 
 	release();
 
