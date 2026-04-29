@@ -51,7 +51,7 @@ void map_render()
 	}
 }
 
-struct BOX_POSITION
+void BOX()
 {
 	int bx;
 	int by;
@@ -77,7 +77,6 @@ int main()
 	int py = 10;
 
 	char key = 0;
-
 	int bx = 0;
 	int by = 0;
 
@@ -85,10 +84,12 @@ int main()
 	{
 		flip();
 
+		BOX();
+
 		clear();
 
 		map_render();
-
+	
 		if (_kbhit())
 		{
 			key = _getch();
@@ -106,12 +107,44 @@ int main()
 					 break;
 			case RIGHT:if (width > px && map[py][px / 2 + 1] != 0) { px += 2; }
 					  break;
-			case DOWN: if (height > py && map[py + 1][px / 2] != 0) { py++; }
+			case DOWN: if (height > py && map[py + 1][px / 2] != 0 ) { py++; }
 					 break;
 			} 
 		}
 		render(px, py, "★");
 	
+
+		if (map[py][px / 2] == 3)
+		{
+
+			bx = px / 2;
+			by = py;
+
+			switch (key)
+			{
+			case UP: if (by > 0 && map[by - 1][bx] != 0) { by--; }
+				   break;
+			case LEFT: if (bx > 0 && map[by][bx - 1] != 0) { bx -= 1; }
+					 break;
+			case RIGHT:if (width > bx * 2 && map[by][bx + 1] != 0) { bx += 1; }
+					  break;
+			case DOWN: if (height > by && map[by + 1][bx] != 0) { by++; }
+					 break;
+			}
+		
+			
+			if (map[by][bx] == 2)
+			{
+				break;
+			}
+			else
+			{
+				map[by][bx] = 3;
+				map[py][px / 2] = 1;
+			}
+
+		}
+		
 	}
 
 
