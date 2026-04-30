@@ -2,6 +2,4 @@
 C:\Users\leeja\OneDrive\Desktop\Sokoban\Sokoban\buffer.h(74,38): warning C4267: '함수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 'Souce.c'을(를) 컴파일하는 중)
   
-C:\Users\leeja\OneDrive\Desktop\Sokoban\Sokoban\Souce.c(57,6): warning C4101: 'by' :참조되지 않은 지역 변수입니다.
-C:\Users\leeja\OneDrive\Desktop\Sokoban\Sokoban\Souce.c(56,6): warning C4101: 'bx' :참조되지 않은 지역 변수입니다.
   Sokoban.vcxproj -> C:\Users\leeja\OneDrive\Desktop\Sokoban\x64\Debug\Sokoban.exe

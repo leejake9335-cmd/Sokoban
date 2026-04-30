@@ -50,12 +50,8 @@ void map_render()
 		}
 	}
 }
+ 
 
-void BOX()
-{
-	int bx;
-	int by;
-};
 
 
 int main()
@@ -83,8 +79,6 @@ int main()
 	while (1)
 	{
 		flip();
-
-		BOX();
 
 		clear();
 
@@ -119,30 +113,31 @@ int main()
 
 			bx = px / 2;
 			by = py;
-
+			int nx = bx;
+			int ny = by;
 			switch (key)
 			{
-			case UP: if (by > 0 && map[by - 1][bx] != 0) { by--; }
-				   break;
-			case LEFT: if (bx > 0 && map[by][bx - 1] != 0) { bx -= 1; }
-					 break;
-			case RIGHT:if (width > bx * 2 && map[by][bx + 1] != 0) { bx += 1; }
-					  break;
-			case DOWN: if (height > by && map[by + 1][bx] != 0) { by++; }
-					 break;
-			}
-		
-			
-			if (map[by][bx] == 2)
-			{
+			case UP: ny--;
 				break;
+			case DOWN: ny++;
+				break;
+			case LEFT: nx--;
+				break;
+			case RIGHT: nx++;
+				break;
+			}
+			if (map[ny][nx] == 1 || map[ny][nx] == 2)
+			{
+				map[ny][nx] = 3;
+				map[by][bx] = 1; 
 			}
 			else
 			{
-				map[by][bx] = 3;
-				map[py][px / 2] = 1;
+				if (key == UP) py++;
+				else if (key == DOWN) py--;
+				else if (key == LEFT) px += 2;
+				else if (key == RIGHT) px -= 2;
 			}
-
 		}
 		
 	}
