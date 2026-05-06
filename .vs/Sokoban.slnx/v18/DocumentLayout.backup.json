@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\leeja\\OneDrive\\Desktop\\Sokoban\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9B76A8F6-A393-4645-9EE8-277550FD05C1}|Sokoban\\Sokoban.vcxproj|C:\\Users\\leeja\\OneDrive\\Desktop\\Sokoban\\Sokoban\\Souce.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9B76A8F6-A393-4645-9EE8-277550FD05C1}|Sokoban\\Sokoban.vcxproj|solutionrelative:Sokoban\\Souce.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9B76A8F6-A393-4645-9EE8-277550FD05C1}|Sokoban\\Sokoban.vcxproj|C:\\Users\\leeja\\OneDrive\\Desktop\\Sokoban\\Sokoban\\buffer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{9B76A8F6-A393-4645-9EE8-277550FD05C1}|Sokoban\\Sokoban.vcxproj|solutionrelative:Sokoban\\buffer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B76A8F6-A393-4645-9EE8-277550FD05C1}|Sokoban\\Sokoban.vcxproj|C:\\Users\\leeja\\OneDrive\\Desktop\\Sokoban\\Sokoban\\Souce.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9B76A8F6-A393-4645-9EE8-277550FD05C1}|Sokoban\\Sokoban.vcxproj|solutionrelative:Sokoban\\Souce.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,17 +18,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "buffer.h",
               "DocumentMoniker": "C:\\Users\\leeja\\OneDrive\\Desktop\\Sokoban\\Sokoban\\buffer.h",
               "RelativeDocumentMoniker": "Sokoban\\buffer.h",
-              "ToolTip": "C:\\Users\\leeja\\OneDrive\\Desktop\\Sokoban\\Sokoban\\buffer.h",
-              "RelativeToolTip": "Sokoban\\buffer.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAEYAAAAbAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\leeja\\OneDrive\\Desktop\\Sokoban\\Sokoban\\buffer.h*",
+              "RelativeToolTip": "Sokoban\\buffer.h*",
+              "ViewState": "AgIAADQAAAAAAAAAAAAlwEkAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-04-27T09:14:40.457Z",
               "IsPinned": true,
@@ -36,13 +36,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Souce.c",
               "DocumentMoniker": "C:\\Users\\leeja\\OneDrive\\Desktop\\Sokoban\\Sokoban\\Souce.c",
               "RelativeDocumentMoniker": "Sokoban\\Souce.c",
-              "ToolTip": "C:\\Users\\leeja\\OneDrive\\Desktop\\Sokoban\\Sokoban\\Souce.c*",
-              "RelativeToolTip": "Sokoban\\Souce.c*",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAACoAAAAiAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\leeja\\OneDrive\\Desktop\\Sokoban\\Sokoban\\Souce.c",
+              "RelativeToolTip": "Sokoban\\Souce.c",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAAAKMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-04-24T10:27:22.216Z",
               "EditorCaption": ""

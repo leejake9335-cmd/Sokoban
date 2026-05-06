@@ -69,9 +69,9 @@ void render(int x, int y, const char* character)
 {
 	DWORD dword;
 	COORD position = { x, y };
-
 	SetConsoleCursorPosition(screen[index], position);
 	WriteFile(screen[index], character, strlen(character), &dword, NULL);
+
 
 
 }
