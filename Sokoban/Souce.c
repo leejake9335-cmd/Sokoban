@@ -249,7 +249,7 @@ int main()
 
 		if (game_clear) {
 			clear();
-			render(WIDTH / 2, HEIGHT / 2, "GAME CLEAR! NEXT STAGE START : ENTER");
+			render(WIDTH / 2, HEIGHT / 2, "STAGE CLEAR! NEXT STAGE START : ENTER");
 			flip();
 			Sleep(3000); 
 			break;       
@@ -258,7 +258,6 @@ int main()
 	}
 	for (int y = 0; y < Height; y++) {
 		for (int x = 0; x < Width; x++) {
-			// 상자(3)나 플레이어(4) 자리는 바닥(1)으로 치환해서 저장
 			if (map2[y][x] == 3 || map2[y][x] == 4) {
 				map_org2[y][x] = 1;
 			}
